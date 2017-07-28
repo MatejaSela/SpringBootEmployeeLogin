@@ -11,10 +11,10 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private int salary;
-	
+
 	public Employee() {
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -26,7 +26,6 @@ public class Employee {
 	public String getFirstName() {
 		return firstName;
 	}
-
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -56,5 +55,3 @@ public class Employee {
 		this.salary = salary;
 	}
 }
-	
-	

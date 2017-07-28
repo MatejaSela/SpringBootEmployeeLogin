@@ -12,17 +12,17 @@ import io.msela.springbootstarter.employee.Employee;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String username;
 	private String password;
-	
+
 	@OneToOne
 	private Employee empl;
-	
+
 	public User() {
 	}
-	
+
 	public Employee getEmployee() {
 		return empl;
 	}
@@ -62,5 +62,3 @@ public class User {
 		this.password = password;
 	}
 }
-	
-	

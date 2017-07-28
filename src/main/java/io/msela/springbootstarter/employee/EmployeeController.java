@@ -1,5 +1,7 @@
 package io.msela.springbootstarter.employee;
+
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,36 +14,37 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
-	
-	//GET
+
+	// GET
 	@RequestMapping("/employees")
-	public List<Employee> getAllEmployees(){
+	public List<Employee> getAllEmployees() {
 		return employeeService.getAllEmployees();
 	}
-	
-	//GET
+
+	// GET
 	@RequestMapping("/employees/{id}")
-    public Employee getemployee(@PathVariable String id) {
-        return employeeService.getEmployee(id);
-    }
-	
-	//POST
+	public Employee getemployee(@PathVariable String id) {
+		return employeeService.getEmployee(id);
+	}
+
+	// POST
 	@RequestMapping(method = RequestMethod.POST, value = "/employees")
 	public void addemployee(@RequestBody Employee employee) {
 		employeeService.addEmployee(employee);
-		
+
 	}
-	
-	//PUT
+
+	// PUT
 	@RequestMapping(method = RequestMethod.PUT, value = "/employees/{id}")
 	public void updateemployee(@RequestBody Employee employee, @PathVariable String id) {
 		employeeService.updateEmployee(id, employee);
-		
+
 	}
-	//PUT
+
+	// PUT
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employees/{id}")
 	public void deleteemployee(@PathVariable String id) {
 		employeeService.deleteEmployee(id);
-		
+
 	}
 }
