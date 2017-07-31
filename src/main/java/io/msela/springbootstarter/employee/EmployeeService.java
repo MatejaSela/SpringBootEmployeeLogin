@@ -6,34 +6,36 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.msela.springbootstarter.employee.Employee;
-
 @Service
 public class EmployeeService {
-	
+
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
-	//GET-ALL
-	public List<Employee> getAllEmployees(){
-		List<Employee> topics = new ArrayList<>() ;
+
+	// GET-ALL
+	public List<Employee> getAllEmployees() {
+		List<Employee> topics = new ArrayList<>();
 		employeeRepository.findAll().forEach(topics::add);
 		return topics;
 	}
-	//GET
+
+	// GET
 	public Employee getEmployee(String id) {
-		
+
 		return employeeRepository.findOne(id);
 	}
-	//POST
+
+	// POST
 	public void addEmployee(Employee employee) {
 		employeeRepository.save(employee);
-			}
-	//PUT
+	}
+
+	// PUT
 	public void updateEmployee(String id, Employee employee) {
 		employeeRepository.save(employee);
-		}
-	//DELETE
+	}
+
+	// DELETE
 	public void deleteEmployee(String id) {
 		employeeRepository.delete(id);
 	}
